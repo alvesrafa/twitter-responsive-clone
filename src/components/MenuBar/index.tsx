@@ -16,7 +16,15 @@ import {
   ExitIcon,
 } from './styles';
 import Button from '../Button';
-const MenuBar: React.FC = () => {
+interface Props {
+  setColors: Function;
+}
+
+const MenuBar: React.FC<Props> = ({ setColors }) => {
+  const handleSetColors = () => {
+    setColors('pink');
+  };
+  const colors = ['blue', 'yellow', 'pink', 'purple', 'orange', 'green'];
   return (
     <Container>
       <Topside>
@@ -40,6 +48,10 @@ const MenuBar: React.FC = () => {
         <MenuButton className="active">
           <ProfileIcon />
           <span>Perfil</span>
+        </MenuButton>
+        <MenuButton onClick={handleSetColors}>
+          <ProfileIcon />
+          <span>Tema</span>
         </MenuButton>
         <Button>
           <span>Tweetar</span>

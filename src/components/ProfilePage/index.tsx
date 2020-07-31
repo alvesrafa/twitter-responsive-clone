@@ -21,11 +21,11 @@ const ProfilePage: React.FC = () => {
       <ProfileData>
         <EditButton outlined>Editar Perfil</EditButton>
         <h1>Rafael Alves</h1>
-        <h2>@raufalves</h2>
+        <h2>@raufael_</h2>
 
         <p>
           ReactJS developer
-          <a href="github.com/alvesrafa"> @raufa</a>
+          <a href="github.com/alvesrafa"> @raufael_</a>
         </p>
         <ul>
           <li>

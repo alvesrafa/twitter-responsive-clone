@@ -1,5 +1,9 @@
 import styled, { css } from 'styled-components';
-import { ArrowLeft, Home, Search, Notifications, Email } from '../../styles/Icons'
+import { ArrowLeft, Home, Search, Notifications, Email, Brush } from '../../styles/Icons'
+
+interface Props {
+  modalIsOpen: Boolean;
+}
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -12,8 +16,8 @@ export const Container = styled.div`
   }
 `;
 
-export const Header = styled.div`
-  z-index: 2;
+export const Header = styled.div<Props> `
+  z-index: ${props => props.modalIsOpen ? '0' : '2'};
   position: sticky;
   top: 0;
   background: var(--primary);
@@ -91,5 +95,8 @@ export const SearchIcon = styled(Search)`
 ${iconCSS}
 `
 export const EmailIcon = styled(Email)`
+${iconCSS}
+`
+export const BrushIcon = styled(Brush)`
 ${iconCSS}
 `

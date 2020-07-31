@@ -10,12 +10,15 @@ import {
   HomeIcon,
   SearchIcon,
   EmailIcon,
+  BrushIcon
 } from './styles';
-
-const Main: React.FC = () => {
+interface Props {
+  modalIsOpen: Boolean;
+}
+const Main: React.FC<Props> = ({ modalIsOpen }) => {
   return (
     <Container>
-      <Header>
+      <Header modalIsOpen={modalIsOpen}>
         <button>
           <BackIcon />
         </button>
@@ -30,6 +33,7 @@ const Main: React.FC = () => {
         <SearchIcon />
         <BellIcon />
         <EmailIcon />
+        <BrushIcon />
       </BottomMenu>
     </Container>
   );

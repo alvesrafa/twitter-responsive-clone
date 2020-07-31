@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
-import { Home, Notifications, Email, FavoriteBorder, Person, ExitToApp, Rocketseat } from '../../styles/Icons';
+import { Home, Notifications, Email, FavoriteBorder, Person, ExitToApp, Rocketseat, Brush } from '../../styles/Icons';
 import RModal from 'react-modal';
-
+import Button from '../Button'
 export const Container = styled.div`
   display: none;
   @media (min-width: 500px) {
@@ -107,6 +107,7 @@ export const BellIcon = styled(Notifications)`${iconCSS}`
 export const EmailIcon = styled(Email)`${iconCSS}`
 export const FavoriteIcon = styled(FavoriteBorder)`${iconCSS}`
 export const ProfileIcon = styled(Person)`${iconCSS}`
+export const BrushIcon = styled(Brush)`${iconCSS}`
 
 
 export const Botside = styled.div`
@@ -181,6 +182,7 @@ export const ColorPick = styled.div`
   }
 `
 export const Modal = styled(RModal)`
+  border: 0;
   position: absolute;
   background: var(--primary);
   padding: 32px;
@@ -212,4 +214,9 @@ export const Modal = styled(RModal)`
     display: flex;
     justify-content: space-between;
   }
+`
+export const SuccessButton = styled(Button)`
+  margin-top: 16px;
+  border-radius: 16px;
+  padding: 8px;
 `

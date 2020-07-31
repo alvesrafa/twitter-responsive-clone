@@ -29,12 +29,12 @@ const Tweet: React.FC = () => {
         <Avatar />
         <Content>
           <Header>
-            <strong>Rocketseat</strong>
+            <strong>Perfil</strong>
             <span>@rocket</span>
             <Dot />
             <time>21 de Jul</time>
           </Header>
-          <Description>Foguete tem ré sim</Description>
+          <Description>Titulo Tweet</Description>
           <ImageContent />
           <Icons>
             <Status>

@@ -10,10 +10,14 @@ import {
 import List from '../List';
 import FollowSuggestion from '../FollowSuggestion';
 import News from '../News';
-const SideBar: React.FC = () => {
+
+interface Props {
+  modalIsOpen: Boolean;
+}
+const SideBar: React.FC<Props> = ({ modalIsOpen }) => {
   return (
     <Container>
-      <SearchWrapper>
+      <SearchWrapper modalIsOpen={modalIsOpen}>
         <SearchInput placeholder="Buscar no twitter" />
         <SearchIcon />
       </SearchWrapper>

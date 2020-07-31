@@ -10,20 +10,26 @@ import {
   EmailIcon,
   FavoriteIcon,
   ProfileIcon,
+  BrushIcon,
   Botside,
   Avatar,
   ProfileData,
   ExitIcon,
   Modal,
   ColorPick,
+  SuccessButton,
 } from './styles';
 import Button from '../Button';
+import ReactModal from 'react-modal';
+
 interface Props {
   setColors: Function;
+  setIsOpen: Function;
+  modalIsOpen: Boolean;
 }
 
-const MenuBar: React.FC<Props> = ({ setColors }) => {
-  const [modalIsOpen, setIsOpen] = React.useState(false);
+const MenuBar: React.FC<Props> = ({ setColors, setIsOpen, modalIsOpen }) => {
+  ReactModal.setAppElement('#root');
   const openModal = () => {
     setIsOpen(true);
   };
@@ -34,7 +40,6 @@ const MenuBar: React.FC<Props> = ({ setColors }) => {
     setIsOpen(false);
   };
   const handleSetColors = (color: String) => {
-    closeModal();
     setColors(color);
   };
   const colors = ['blue', 'yellow', 'pink', 'purple', 'orange', 'green'];
@@ -63,14 +68,14 @@ const MenuBar: React.FC<Props> = ({ setColors }) => {
           <span>Perfil</span>
         </MenuButton>
         <MenuButton onClick={openModal}>
-          <ProfileIcon />
+          <BrushIcon />
           <span>Tema</span>
         </MenuButton>
         <Button>
           <span>Tweetar</span>
         </Button>
       </Topside>
-      <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
+      <Modal isOpen={Boolean(modalIsOpen)} onRequestClose={closeModal}>
         <h4>Personalizar sua exibição</h4>
         <p>
           As configurações de exibição afetam todas as suas contas do Twitter
@@ -102,6 +107,7 @@ const MenuBar: React.FC<Props> = ({ setColors }) => {
             <img src="https://abs-0.twimg.com/emoji/v2/svg/1f951.svg" alt="" />
           </ColorPick>
         </div>
+        <SuccessButton onClick={closeModal}>Concluído</SuccessButton>
       </Modal>
       <Botside>
         <Avatar />

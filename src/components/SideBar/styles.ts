@@ -11,14 +11,16 @@ export const Container = styled.div`
 
   }
 `;
-
-export const SearchWrapper = styled.div`
+interface Props {
+  modalIsOpen: Boolean;
+}
+export const SearchWrapper = styled.div<Props>`
   padding: 10px 24px;
 
   width: min(399px, 100%);
   position: fixed;
   top: 0;
-  z-index: 2;
+  z-index: ${props => props.modalIsOpen ? '0' : '2'};
   background: var(--primary);
 
   max-height: 57px;

@@ -4,13 +4,16 @@ export {
   Email, FavoriteBorder,
   ExitToApp,
   LocationOn,
-  Search
+  Search,
+
 } from 'styled-icons/material-outlined';
 
 export {
-  Person, Cake, Favorite
+  Person, Cake, Favorite, Brush
 } from 'styled-icons/material'
 export { ArrowLeft } from 'styled-icons/heroicons-solid'
 export { Chat } from 'styled-icons/heroicons-outline'
 
-export { RocketseatIcon as Rocketseat } from '../components/RocketseatIcon'
+// export { RocketseatIcon as Rocketseat } from '../components/RocketseatIcon'
+
+export { Twitter as Rocketseat } from 'styled-icons/boxicons-logos'

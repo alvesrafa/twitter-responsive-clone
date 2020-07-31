@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Home, Notifications, Email, FavoriteBorder, Person, ExitToApp, Rocketseat } from '../../styles/Icons';
+import RModal from 'react-modal';
 
 export const Container = styled.div`
   display: none;
@@ -156,4 +157,59 @@ display: none;
     }
   }
 }
+`
+export const ColorPick = styled.div`
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .color {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: ${props => props.color ? `var(--${props.color})` : 'var(--blue)'};
+    
+  }
+  cursor: pointer;
+  transition: transform .2s;
+  > img {
+    margin-top: 8px;
+    width: 30px;
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
+`
+export const Modal = styled(RModal)`
+  position: absolute;
+  background: var(--primary);
+  padding: 32px;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  @media (min-width: 390px) {width: 90%}
+  @media (min-width: 590px) {width: 70%}
+  @media (min-width: 990px) {width: 40%}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  > h4 {
+    font-size: 20px;
+  }
+  > p {
+    text-align: center;
+    color: var(--gray);
+  }
+  .colors {
+    background: var(--secondary);
+    padding: 12px 20px;
+    border-radius: 6px;
+    margin-top: 16px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
 `

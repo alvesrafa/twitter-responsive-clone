@@ -40,5 +40,13 @@ export default createGlobalStyle`
     --twitter-dark-hover: ${props => props.theme.twitter_dark_hover};
     --twitter-light-hover: ${props => props.theme.twitter_light_hover};
 
+
+    --blue: #1DA1F2;
+    --yellow: #ffad1f;
+    --pink: #e0245e;
+    --purple: #794bc4;
+    --orange: #f45d22;
+    --green: #17bf63;
+
   }
 `
